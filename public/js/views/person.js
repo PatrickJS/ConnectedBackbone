@@ -3,14 +3,17 @@ var PersonView = Backbone.View.extend({
   initialize: function() {
     this.render();
   },
-  // template: _.template($('#personTemplate').html()),
-  template: '#personTemplate',
+  template: _.template($('#personTemplate').html()),
+  // template: '#personTemplate',
   render: function() {
-    var template = _.template($(this.template).html());
-    this.$el.html(template(this.model.toJSON()));
+    this.$el.html(this.template(this.model.toJSON()));
   }
 });
 
 var person = new Person();
 var personView = new PersonView({model: person});
-$('body').html(personView.el);
+
+var person2 = new Person({name:'Patrick', age:23});
+var personView2 = new PersonView({model: person2});
+
+$('body').html(personView.el).append(personView2.el);
