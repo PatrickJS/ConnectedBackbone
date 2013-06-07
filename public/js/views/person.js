@@ -1,10 +1,10 @@
 var PersonView = Backbone.View.extend({
   tagName: 'li',
   initialize: function() {
-    console.log('hi there', this.model);
+    this.render();
   },
   render: function() {
-
+    this.$el.html(this.model.get('name'));
   }
 });
 
