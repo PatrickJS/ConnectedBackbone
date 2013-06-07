@@ -12,9 +12,14 @@ var PersonView = Backbone.View.extend({
 var person = new Person();
 var personView = new PersonView({model: person});
 
+var people = new People();
+people.add(person);
+
 var person2 = new Person({name:'Patrick', age:23});
 var personView2 = new PersonView({model: person2});
 
-var people = [personView, personView2];
+people.add(person2);
+
+console.log(people);
 
 $('body').html(personView.el).append(personView2.el);
