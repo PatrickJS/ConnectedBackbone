@@ -23,6 +23,7 @@
 <script src="js/models/task.js"></script>
 
 <script src="js/collections/people.js"></script>
+<script src="js/collections/tasks.js"></script>
 
 <script src="js/views/person.js"></script>
 <script src="js/views/people.js"></script>
@@ -47,10 +48,20 @@
 
   var peopleView = new App.Views.People({collection: people});
 
-  var task = new App.Models.Task({
+  var task = new App.Collections.Task([
+  {
     title: 'Go to the store',
     priority: 4
-  })
+  },
+  {
+    title: 'yolo',
+    priority: 3
+  },
+  {
+    title: 'yup yup mang',
+    priority: 2
+  }
+  ]);
 
   var taskView = new App.Views.Task({model: task})
 
