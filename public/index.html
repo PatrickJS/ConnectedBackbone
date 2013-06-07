@@ -15,6 +15,8 @@
 <script src="js/lib/underscore.js"></script>
 <script src="js/lib/backbone.js"></script>
 
+<script src="js/main.js"></script>
+
 <script src="js/templates/templates.js"></script>
 
 <script src="js/models/person.js"></script>
@@ -24,6 +26,26 @@
 <script src="js/views/person.js"></script>
 <script src="js/views/people.js"></script>
 
-<script src="js/main.js"></script>
+<script type="text/javascript">
 
+  var people = new App.Collections.People([
+    {
+      name: 'Patrick',
+      age: 23
+    },
+    {
+      name: 'John Doe',
+      age: 55
+    },
+    {
+      name: 'Sally Doe',
+      age: 29
+    }
+    ]);
+
+  var peopleView = new App.Views.People({collection: people});
+
+  $('body').append(peopleView.render().el);
+
+</script>
 </html>
