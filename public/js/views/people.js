@@ -10,6 +10,7 @@ var PeopleView = Backbone.View.extend({
       // append to root element
       this.$el.append(personView.render().el);
     }, this);
+
     return this;
   }
 });
