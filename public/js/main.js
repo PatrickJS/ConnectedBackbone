@@ -4,4 +4,5 @@
     Collections: {},
     Views: {}
   };
+
 }());
