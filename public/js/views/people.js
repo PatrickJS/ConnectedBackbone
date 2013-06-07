@@ -1,6 +1,5 @@
 var PeopleView = Backbone.View.extend({
   initialize: function() {
-    console.log(this.collection);
   },
   tagName: 'ul',
   render: function() {
