@@ -3,9 +3,10 @@ var PersonView = Backbone.View.extend({
   initialize: function() {
     this.render();
   },
+  template: _.template("<%= name %> (<%= age %>) - <%= occupation %>"),
   render: function() {
     // anti-pattern
-    this.$el.html(this.model.get('name') + ' (' + this.model.get('age') + ')' + ' - ' + this.model.get('occupation'));
+    this.$el.html(this.template(this.model.attributes));
   }
 });
 
