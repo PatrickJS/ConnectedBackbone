@@ -14,3 +14,4 @@ var people = new People([
   ]);
 
 var peopleView = new PeopleView({collection: people});
+$('body').append(peopleView.render().el);
