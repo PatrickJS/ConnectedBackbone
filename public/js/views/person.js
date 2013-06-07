@@ -9,8 +9,6 @@ var PersonView = Backbone.View.extend({
   }
 });
 
-var person = new Person();
-var personView = new PersonView({model: person});
 
 var people = new People([
   {
@@ -26,11 +24,13 @@ var people = new People([
     age: 29
   }
   ]);
-people.add(person);
+console.log(people);
+var model = people.at(0);
+console.log('name: ',model.get('name'));
+console.log('occupation: ',model.get('occupation'));
+console.log(people.toJSON());
+model.set('occupation', 'Web Developer');
+console.log('occupation: ',model.get('occupation'));
+console.log(people.toJSON());
 
-var person2 = new Person({name:'Patrick', age:23});
-var personView2 = new PersonView({model: person2});
-
-people.add(person2);
-
-$('body').html(personView.el).append(personView2.el);
+$('body').html();
