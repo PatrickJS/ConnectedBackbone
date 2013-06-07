@@ -1,3 +1,3 @@
-var template = function(id) {
+Backbone.template = function(id) {
   return _.template($('#' + id).html());
 };
