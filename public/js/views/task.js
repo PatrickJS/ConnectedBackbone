@@ -4,8 +4,8 @@ App.Views.Task = Backbone.View.extend({
   events: {
   },
   render: function() {
-    console.log( this.template(this.model.toJSON() ) );
-    this.$el.html(this.model.get('title'));
+    var template = this.template(this.model.attributes);
+    this.$el.html(template);
     return this;
   }
 });
