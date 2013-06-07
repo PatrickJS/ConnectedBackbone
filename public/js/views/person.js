@@ -1,4 +1,4 @@
-App.PersonView = Backbone.View.extend({
+App.Views.Person = Backbone.View.extend({
   tagName: 'li',
   initialize: function() {
   },
