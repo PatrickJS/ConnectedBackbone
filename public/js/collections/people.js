@@ -1,3 +1,3 @@
-var People = Backbone.Collection.extend({
+App.People = Backbone.Collection.extend({
   model: Person
 });
