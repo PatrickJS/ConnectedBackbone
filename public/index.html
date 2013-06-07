@@ -5,6 +5,8 @@
   <title>Backbone</title>
 </head>
 <body>
+  <h1>My Tasks</h1>
+  <div class="tasks"></div>
 </body>
 
 <script id="person" class="template" type="text/template">
@@ -28,6 +30,7 @@
 <script src="js/views/person.js"></script>
 <script src="js/views/people.js"></script>
 <script src="js/views/task.js"></script>
+<script src="js/views/tasks.js"></script>
 
 <script type="text/javascript">
 
@@ -48,24 +51,24 @@
 
   var peopleView = new App.Views.People({collection: people});
 
-  var task = new App.Collections.Task([
-  {
-    title: 'Go to the store',
-    priority: 4
-  },
-  {
-    title: 'yolo',
-    priority: 3
-  },
-  {
-    title: 'yup yup mang',
-    priority: 2
-  }
+  var taskCollection = new App.Collections.Tasks([
+    {
+      title: 'Go to the store',
+      priority: 4
+    },
+    {
+      title: 'Buy milk',
+      priority: 3
+    },
+    {
+      title: 'Sell cookies',
+      priority: 2
+    }
   ]);
 
-  var taskView = new App.Views.Task({collection: task})
+  var taskCollectionView = new App.Views.Tasks({collection: taskCollection})
 
-  $('body').append(taskView.render().el);
+  $('.tasks').append(taskCollectionView.render().el);
 
 </script>
 </html>
