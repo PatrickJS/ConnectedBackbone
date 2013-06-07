@@ -3,10 +3,11 @@ var PersonView = Backbone.View.extend({
   initialize: function() {
     this.render();
   },
-  template: _.template($('#personTemplate').html()),
+  // template: _.template($('#personTemplate').html()),
+  template: '#personTemplate',
   render: function() {
-    // anti-pattern
-    this.$el.html(this.template(this.model.toJSON()));
+    var template = _.template($(this.template).html());
+    this.$el.html(template(this.model.toJSON()));
   }
 });
 
