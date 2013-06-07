@@ -20,11 +20,13 @@
 <script src="js/templates/templates.js"></script>
 
 <script src="js/models/person.js"></script>
+<script src="js/models/task.js"></script>
 
 <script src="js/collections/people.js"></script>
 
 <script src="js/views/person.js"></script>
 <script src="js/views/people.js"></script>
+<script src="js/views/task.js"></script>
 
 <script type="text/javascript">
 
@@ -45,7 +47,14 @@
 
   var peopleView = new App.Views.People({collection: people});
 
-  $('body').append(peopleView.render().el);
+  var task = new App.Models.Task({
+    title: 'Go to the store',
+    priority: 4
+  })
+
+  var taskView = new App.Views.Task({model: task})
+
+  $('body').append(taskView.render().el);
 
 </script>
 </html>
