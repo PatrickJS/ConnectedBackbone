@@ -1,14 +1,10 @@
 App.Views.Task = Backbone.View.extend({
   tagName: 'li',
-  template: template('task.template'),
+  template: App.Template('task.template'),
   events: {
-    'click span': 'showAlert'
-  },
-  showAlert: function(e) {
-    alert('you clicked me!');
-    return false;
   },
   render: function() {
+    console.log( this.template(this.model.toJSON() ) );
     this.$el.html(this.model.get('title'));
     return this;
   }
