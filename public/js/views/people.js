@@ -8,8 +8,9 @@ var PeopleView = Backbone.View.extend({
     this.collection.each(function(person) {
       // for each, create a new Person View
       var personView = new PersonView({model: person});
-      console.log(personView.el);
-    });
-    // append to root element
+      // append to root element
+      this.$el.append(personView.el);
+    }, this);
+
   }
 });
