@@ -24,12 +24,17 @@ var people = new People([
     age: 29
   }
   ]);
+
 console.log(people);
+
 var model = people.at(0);
+
 console.log('name: ',model.get('name'));
 console.log('occupation: ',model.get('occupation'));
 console.log(people.toJSON());
+
 model.set('occupation', 'Web Developer');
+
 console.log('occupation: ',model.get('occupation'));
 console.log(people.toJSON());
 
