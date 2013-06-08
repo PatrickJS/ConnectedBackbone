@@ -10,6 +10,7 @@
       '': 'index',
       'show/:id': 'show',
       'download/*filename': 'download',
+      'search/:query': 'search',
     },
     index: function() {
       console.log('in the index page');
@@ -19,6 +20,9 @@
     },
     download: function(filename) {
       console.log(filename);
+    },
+    search: function(query) {
+      console.log(query);
     },
     }
   });
