@@ -7,12 +7,17 @@
 
   var vent = _.extend({}, Backbone.Events);
 
-  App.Views.Appointment = Backbone.View.extend({
+  App.Views.Appointments = Backbone.View.extend({
     initialize: function() {
       vent.on('appointment:show', this.show, this);
     },
     show: function(id) {
-      console.log('showing the appointment with the id of: '+id);
+      var appointment = this.collection.get(id),
+          appointmentView = new App.ViewsAppointment({model: appointment});
+
+      $('body').append(appointmentView.render().el );
+
+      console.log('showing the appointment with the id of: '+ appointment);
     }
   });
 
@@ -30,7 +35,8 @@
     }
 
   });
-  new App.Views.Appointment();
+
+  new App.Views.Appointments({collection: someCollection});
   new App.Router();
   Backbone.history.start();
 
