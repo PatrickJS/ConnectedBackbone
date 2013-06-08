@@ -8,13 +8,13 @@
   App.Router = Backbone.Router.extend({
     routes: {
       '': 'index',
-      'show': 'show'
+      'show/:id': 'show'
     },
     index: function() {
       console.log('in the index page');
     },
-    show: function() {
-      console.log('show routes');
+    show: function(id) {
+      console.log('show routes for id of: ' + id);
     }
   });
   new App.Router();
