@@ -7,12 +7,16 @@
 
   App.Router = Backbone.Router.extend({
     routes: {
-      '': 'index'
+      '': 'index',
+      'show': 'show'
     },
     index: function() {
       console.log('in the index page');
+    },
+    show: function() {
+      console.log('show routes');
     }
   });
-  new App.Router;
+  new App.Router();
   Backbone.history.start();
 }());
