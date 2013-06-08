@@ -7,7 +7,9 @@ App.Views.AddTask = Backbone.View.extend({
   },
   submit: function(e) {
     var newTaskTitle = $(e.currentTarget).find('input[type=text]').val();
-    console.log(newTaskTitle);
+    var task = new App.Models.Task({title: newTaskTitle});
+    console.log(task);
+
     return false; // same as e.preventDefault()
   }
 });
