@@ -5,79 +5,14 @@
   <title>Backbone</title>
 </head>
 <body>
-  <h1>My Tasks</h1>
-  <form id="addTask" action="">
-    <input type="text" placeholder="Your new task" autofocus>
-    <input type="submit" value="Add Task">
-  </form>
-  <div class="tasks"></div>
 </body>
-
-<script id="person" class="template" type="text/template">
-  <strong><%= name %></strong> (<%= age %>) - <%= occupation %>
-</script>
-<script id="task" class="template" type="text/template">
-  <span><%= title %></span> <button class="edit">Edit</button> <button class="delete">Delete</button>
-</script>
 
 <script src="js/lib/jquery.js"></script>
 <script src="js/lib/underscore.js"></script>
 <script src="js/lib/backbone.js"></script>
 
 <script src="js/main.js"></script>
-
-<script src="js/templates/templates.js"></script>
-
-<script src="js/models/person.js"></script>
-<script src="js/models/task.js"></script>
-
-<script src="js/collections/people.js"></script>
-<script src="js/collections/tasks.js"></script>
-
-<script src="js/views/person.js"></script>
-<script src="js/views/people.js"></script>
-<script src="js/views/task.js"></script>
-<script src="js/views/tasks.js"></script>
-<script src="js/views/addTask.js"></script>
-
 <script type="text/javascript">
-
-  var people = new App.Collections.People([
-    {
-      name: 'Patrick',
-      age: 23
-    },
-    {
-      name: 'John Doe',
-      age: 55
-    },
-    {
-      name: 'Sally Doe',
-      age: 29
-    }
-    ]);
-
-  var peopleView = new App.Views.People({collection: people});
-
-  var taskCollection = new App.Collections.Tasks([
-    {
-      title: 'Go to the store',
-      priority: 4
-    },
-    {
-      title: 'Buy milk',
-      priority: 3
-    },
-    {
-      title: 'Sell cookies',
-      priority: 2
-    }
-  ]);
-  var addTaskView = new App.Views.AddTask({collection: taskCollection});
-
-  var taskCollectionView = new App.Views.Tasks({collection: taskCollection})
-
-  $('.tasks').append(taskCollectionView.render().el);
 
 </script>
 </html>
