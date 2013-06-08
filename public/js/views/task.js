@@ -17,9 +17,11 @@ App.Views.Task = Backbone.View.extend({
     this.model.set('title', newTaskTitle, {validate : true});
   },
   destory: function() {
+    // separation of concerns
     this.model.destroy();
   },
   remove: function() {
+    // separation of concerns
     this.$el.remove();
   },
   render: function() {
