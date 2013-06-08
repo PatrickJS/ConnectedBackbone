@@ -11,6 +11,7 @@
       'show/:id': 'show',
       'download/*filename': 'download',
       'search/:query': 'search',
+      '*pathname': 'defaultRoute'
     },
     index: function() {
       console.log('in the index page');
@@ -24,6 +25,9 @@
     search: function(query) {
       console.log(query);
     },
+    defaultRoute: function(pathname) {
+      alert('not sure what you mean here... ' + pathname);
+      console.log(pathname);
     }
   });
   new App.Router();
