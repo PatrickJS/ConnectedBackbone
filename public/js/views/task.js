@@ -1,4 +1,8 @@
 App.Views.Task = Backbone.View.extend({
+  initialize: function() {
+    // _.bindAll(this, 'editTask', 'render') // fix the content to many methods
+    this.model.on('change', this.render, this);
+  },
   tagName: 'li',
   template: App.Template('task.template'),
   events: {
