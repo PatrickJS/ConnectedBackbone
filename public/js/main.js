@@ -29,7 +29,10 @@
       alert('not sure what you mean here... ' + pathname);
       console.log(pathname);
     }
+
   });
+
   new App.Router();
   Backbone.history.start();
+
 }());
