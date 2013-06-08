@@ -9,7 +9,7 @@ App.Views.Task = Backbone.View.extend({
     'click button.edit': 'editTask'
   },
   editTask: function() {
-    var newTaskTitle = prompt('What would you like to change the text to?', this.model.get('title'));
+    var newTaskTitle = prompt('What would you like to change the text to?',this.model.get('title'));
     if (!newTaskTitle) return;
 
     this.model.set('title', newTaskTitle, {validate : true});
