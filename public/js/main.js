@@ -7,10 +7,14 @@
 
   App.Router = Backbone.Router.extend({
     routes: {
-      '': 'index'
+      '': 'index',
+      'appointment/:id': 'showAppointment'
     },
     index: function() {
       console.log('in the index page');
+    },
+    showAppointment: function(id) {
+      console.log('appointment id: '+id);
     }
 
   });
